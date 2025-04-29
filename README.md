@@ -1,57 +1,104 @@
-Penulis: [nama_penulis](link_twt)
+Penulis: [Naufal](https://x.com/0xfal)
 
-# Pengenalan
-Bab ini berisi pengenalan mengenai nama_project
-
-## Nama_Project
 > [!NOTE]
-> berikan_description_singkat_mengenai_project_tersebut
+> **WHAT IS Gensyn?**\
+> Gensyn is a protocol for machine learning computation. It provides a standardised way to execute machine learning tasks over any device in the world. This allows us to aggregate the world's computing supply into a single network, which can support AI systems at far greater scale than is possible today.
 
-### Investor
-taroh_img_investor_jika_ada
+# Tutorial Gensyn RL Swarm
 
-# Tutorial XXX
-Bab ini berisi tutorial cara menjalankan XXX
+## 1. Prerequisites
 
-## Requirement
-Syarat menjalankan XXX
-- Spek Komputer
-  
-| Name | Minimum |
+- [Cara terhubung ke VPS](https://github.com/ZuperHunt/Connect-to-VPS)
+
+## 2. Requirements
+
+### Hardware
+
+| Part | Minimum | Recommended |
+| ------------- | ------------- | ------------- |
+| CPU | - | ≥ 8 cores |
+| RAM | 16 GB | ≥ 20 GB |
+| SSD | 50 GB | - |
+
+CUDA devices (officially supported):
+
+| Model | VRAM |
 | ------------- | ------------- |
-| Operating System  | OS_NAME  |
-| CPU  | X Cores  |
-| RAM  | X GB  |
-| SSD  | XX GB  |
-- item_2_dan_seterusnya_jika_ada
+| RTX 4070 | 12 GB |
+| RTX 3090 | 24 GB |
+| RTX 4090 | 24 GB |
+| A100 | 80 GB |
+| H100 | 80 GB ~ 94 GB |
 
-> [!TIP]
-> Kami menggunakan Digital Ocean dengan speksifikasi `XX/ X Core/ X GB RAM/ XX GB SSD`. Jika kamu membutuhkan VPS, kami memiliki link gratis credit VPS DigitalOcean sebesar $200. Cukup untuk menjalankan XXX selama XX . Daftar sekarang dengan [link utama](link_reff_do_kamu) / [link cadangan](link_reff_do_2_kamu) untuk mendapatkannya.
-  
-## Dependencies
+### Software
 
-### Install X 
+| ✅ Linux | ✅ macOS | ✅ Windows (WSL) |
+| ------------- | ------------- | ------------- |
+
+> [!NOTE]
+> Tutorial ini dibuat menggunakan Linux (Ubuntu), untuk sistem operasi lainnya mungkin akan sedikit berbeda!
+
+## 3. Dependencies
+
+### 3.1 System Packages
+
 ```
-sudo apt-get install xxxx
+sudo apt update && sudo apt upgrade -y
 ```
 
-## Menjalankan XXX
+### 3.2 Install Other Essential Packages
 
-### Run XXX
 ```
-code blocks for commands
+sudo apt install -y screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev
 ```
 
-## Help
+### 3.3 Install Python
 
-Join komunitas [Discord ZuperHunt](https://t.co/n7TeWVlA48) jika kamu ada pertanyaan.
+```
+sudo apt install -y python3 python3-pip python3-venv python3-dev
+```
 
-## Change Logs
+### 3.4 Install Node.js and Yarn
 
-* 0.0.1
-    * Initial Release
+```
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs && sudo npm install -g yarn
+```
 
-## Acknowledgments
+## 4. Execution
 
-Referensi
-* [nama_referensi](link_referensi)
+### 3.1 Create a Session
+
+Ubah `<SESSION_NAME>` menjadi terserahmu.
+
+```
+screen -S <SESSION_NAME>
+```
+
+### 4.2 Clone the Repository
+
+```
+git clone https://github.com/gensyn-ai/rl-swarm/
+cd rl-swarm
+```
+
+### 4.3 Import swarm.pem (Optional)
+
+
+
+### 4.4 Run the swarm
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+sed -i '/[ -z "$PS1" ] && return/i : "${PS1:=}"' /root/.bashrc
+./run_rl_swarm.sh
+```
+
+---
+
+Reach us if you have any question:\
+ZuperCollective's [Discord server](https://discord.gg/ZuperCollective) | [X(Twitter)](https://twitter.com/ZuperCollective)
+
+# Acknowledgements
+
+* [RL Swarm](https://github.com/gensyn-ai/rl-swarm)
