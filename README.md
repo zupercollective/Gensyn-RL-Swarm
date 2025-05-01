@@ -102,6 +102,17 @@ Pilih saja `n`.
 
 ![image](https://github.com/user-attachments/assets/ad674908-d208-4b9c-b7fc-1df68e30f9b4)
 
+Hubungkan local dengan GPU dengan menjalankan perintah berikut.
+Sesuaikan <GPU_PORT> dan <GPU_IP> dengan punyamu.
+
+```
+ssh -p <GPU_PORT> root@<GPU_IP> -L 3000:localhost:3000
+```
+
+Buka `http://localhost:3000/` di peramban, bebas mau pakai apa aja, Chromium-based boleh, Firefox-based boleh.
+
+![image](https://github.com/user-attachments/assets/022854c6-345e-43fc-b990-e59ff9e5425c)
+
 ---
 
 Reach us if you have any question:\
