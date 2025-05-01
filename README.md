@@ -94,6 +94,14 @@ sed -i '/[ -z "$PS1" ] && return/i : "${PS1:=}"' /root/.bashrc
 ./run_rl_swarm.sh
 ```
 
+Pilih `a` untuk CPU-only atau GPU dengan VRAM kecil, pilih `b` untuk GPU dengan VRAM besar.
+
+![image](https://github.com/user-attachments/assets/3efc2da2-6a07-4587-8887-32d1f3886f1f)
+
+Pilih saja `n`.
+
+![image](https://github.com/user-attachments/assets/ad674908-d208-4b9c-b7fc-1df68e30f9b4)
+
 ---
 
 Reach us if you have any question:\
